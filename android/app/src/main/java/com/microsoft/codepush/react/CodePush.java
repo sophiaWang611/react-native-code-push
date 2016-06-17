@@ -87,7 +87,7 @@ public class CodePush implements ReactPackage {
         this(deploymentKey, mainActivity, false);
     }
 
-    public CodePush(String deploymentKey, Activity mainActivity, boolean isDebugMode) {
+    public CodePush(String deploymentKey, Activity mainActivity, boolean isDebugMode, String serverUrl) {
         SoLoader.init(mainActivity, false);
         this.applicationContext = mainActivity.getApplicationContext();
         this.codePushPackage = new CodePushPackage(mainActivity.getFilesDir().getAbsolutePath());
@@ -95,6 +95,9 @@ public class CodePush implements ReactPackage {
         this.deploymentKey = deploymentKey;
         this.isDebugMode = isDebugMode;
         this.mainActivity = mainActivity;
+        if (serverUrl != null && serverUrl.length() != 0) {
+            this.serverUrl = serverUrl;
+        }
 
         try {
             PackageInfo pInfo = applicationContext.getPackageManager().getPackageInfo(applicationContext.getPackageName(), 0);
