@@ -75,7 +75,7 @@ public class CodePush implements ReactPackage {
     private String appVersion;
     private int buildVersion;
     private String deploymentKey;
-    private final String serverUrl = "https://codepush.azurewebsites.net/";
+    private String serverUrl = "https://codepush.azurewebsites.net/";
 
     private Activity mainActivity;
     private Context applicationContext;
@@ -84,7 +84,7 @@ public class CodePush implements ReactPackage {
     private static CodePush currentInstance;
 
     public CodePush(String deploymentKey, Activity mainActivity) {
-        this(deploymentKey, mainActivity, false);
+        this(deploymentKey, mainActivity, false, "");
     }
 
     public CodePush(String deploymentKey, Activity mainActivity, boolean isDebugMode, String serverUrl) {
