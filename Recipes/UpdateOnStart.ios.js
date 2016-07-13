@@ -1,13 +1,13 @@
 'use strict';
 
 var pkg = require('./package');
-var React = require('react-native');
+var React = require('react');
 var {
   AppRegistry,
   StyleSheet,
   Text,
   View,
-} = React;
+} = require('react-native');
 
 var CodePush = require('react-native-code-push');
 
